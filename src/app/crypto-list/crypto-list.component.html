@@ -1,0 +1,36 @@
+<div >
+  <div class="custom-toolbar">
+    <mat-toolbar class="custom-toolbar">
+      <span >Crypto List</span>
+      <span class="example-spacer"></span>
+
+          <input matInput class="add" type="text" [(ngModel)]="cryptoToAdd" placeholder="Add currency by name" >
+
+        <button class= "add-button" (click)="addCrypto()">Add</button>
+
+
+    </mat-toolbar>
+  </div>
+  <ul>
+    <li *ngFor="let crypto of cryptoList" class="crypto-list">
+      <img [src]="iconPath + crypto.symbol.toLowerCase()  + '.png'" alt="{{ crypto.name }} Icon" class="crypto-icon" />
+      <div class="crypto-info">
+        <h3 class="crypto-name">{{ crypto.name }}</h3>
+        <h3 class="crypto-symbol">{{ crypto.symbol }}</h3>
+      </div>
+
+      <div class="crypto-info">
+      <p class="price">${{ crypto.metrics.all_time_high.price| number: '1.2-2'  }}</p>
+      <p [ngClass]="{'negative': crypto.metrics.market_data.percent_change_usd_last_24_hours < 0,
+                     'positive': crypto.metrics.market_data.percent_change_usd_last_24_hours >= 0}">
+        {{ crypto.metrics.market_data.percent_change_usd_last_24_hours | number: '1.2-2' }}%
+        <span [ngClass]="{'up-arrow': crypto.metrics.market_data.percent_change_usd_last_24_hours >= 0, 'down-arrow': crypto.metrics.market_data.percent_change_usd_last_24_hours < 0}">
+          </span>
+      </p>
+      </div>
+      <button  (click)="removeCrypto(crypto.id)" [disabled]="cryptoList.length === 0">Remove</button>
+    </li>
+  </ul>
+
+
+</div>

@@ -1,0 +1,10 @@
+<p>crypto-detail works!</p>
+<div>
+  <h2>Crypto Detail</h2>
+  <div *ngIf="cryptoData">
+    <h3>{{ cryptoData.name }}</h3>
+    <p>Symbol: {{ cryptoData.symbol }}</p>
+    <p>Current Price: {{ cryptoData.metrics.market_data.price_usd }}</p>
+    <p>Change (24h): {{ cryptoData.metrics.market_data.percent_change_usd_last_24_hours }}%</p>
+  </div>
+</div>
