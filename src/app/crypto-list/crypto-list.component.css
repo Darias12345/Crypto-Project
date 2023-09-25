@@ -7,184 +7,195 @@ div {
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
-.custom-toolbar{
-  text-align: center;
-  background-color: #5d5353;
-  padding: 20px;
-  object-fit: fill;
-}
-.title{
-  color:#ffffff;
-  font-size: 20px;
-}
-.example-spacer {
-  flex: 1 1 auto;
-}
+   .custom-toolbar{
+     text-align: center;
+     background-color: #5d5353;
+     padding: 20px;
+     object-fit: fill;
+   }
 
-.mat-form-field .add{
-  font-size: 9px;
-}
+    .custom-toolbar> span{
+      font-size: 24px;
+    }
+
+    .example-spacer {
+      flex: 1 1 auto;
+    }
+
+/* Style the container for input and button */
+    .input-container {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 5px;
+      background-color: transparent;
+    }
+
+      .input-container input.add {
+         flex: 1;
+         border: none;
+         outline: none;
+         padding: 8px;
+         font-size: 16px;
+         background-color: transparent;
+      }
 
 
+      .input-container button.add-button {
+         border: none;
+         background-color: #7d9da1;
+         color: #fff;
+         padding: 8px 16px;
+         border-radius: 5px;
+         cursor: pointer;
+      }
 
-/* Increase the button size */
-.add-button {
-  font-size: 16px; /* Adjust the font size as desired */
-  padding: 10px 20px; /* Adjust the padding as desired */
-  margin-left: 10px; /* Add margin to separate the input and button */
-}
+      /* Style the button on hover */
+      .input-container button.add-button:hover {
+         background-color: #4f606c;
+      }
+
 
 
 
 /* Center the <ul> on the page */
-ul {
-  display: flex;
-  flex-direction: column; /* Stack <li> elements vertically */
-  align-items: center; /* Horizontally center-align <li> elements */
-  padding: 0; /* Remove default padding */
-}
+   ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
 
-li {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 80%;
-  padding: 10px;
-  background-color: #fff;
-  margin: 10px 0;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+     li {
+       display: flex;
+       justify-content: space-around;
+       align-items: center;
+       width: 80%;
+       padding: 10px;
+       background-color: #fff;
+       margin: 10px 0;
+       border-radius: 5px;
+       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+     }
 
-.crypto-icon {
-  width: 40px; /* Adjust the size of the icon */
-  height: 40px; /* Adjust the size of the icon */
-  object-fit: cover; /* Maintain aspect ratio for the icon */
-}
+       .crypto-icon {
+          width: 40px;
+          height: 40px;
+          object-fit: cover;
+       }
 
-.crypto-info {
-  display: flex;
-  flex-direction: column; /* Stack child elements vertically */
-  background-color: #fff;
-  box-shadow: none;
-}
+      .crypto-info {
+          display: flex;
+          flex-direction: column;
+          background-color: #fff;
+          box-shadow: none;
+      }
 
-.crypto-name,
-.crypto-symbol {
-  margin: 5px 0; /* Add margin to separate the two <h3> elements vertically */
-}
+         .crypto-name,
+         .crypto-symbol {
+             margin: 5px 0;
+         }
 
-.crypto-symbol {
-  font-weight: lighter;
-}
+         .crypto-symbol {
+            font-weight: lighter;
+         }
 
-a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-}
-/* Style for the Price*/
-.price{
-  font-weight: bold;
-}
-/* Style for the Percentage change */
-.negative {
-  color: red;
-}
+         .price{
+            font-weight: bold;
+         }
 
-/* Green text for positive values */
-.positive {
-  color: green;
-}
+        /* Style for the Percentage change */
+        .negative {
+            color: red;
+        }
+        .positive {
+           color: green;
+        }
 
-/* CSS for the up arrow */
-.up-arrow::after {
-  content: '\2191'; /* Unicode character code for the up arrow */
-  color: green;
-  margin-left: 5px; /* Add some spacing between the arrow and the percentage */
-  font-size: 1.2em; /* Increase arrow size */
-  display: inline-block;
-  transform: rotate(45deg) scale(1, 0.8); /* Rotate and scale the arrow */
-  transform-origin: center;
-  font-weight: bold;
-}
+      /* CSS for the up &  down arrows */
+        .up-arrow::after {
+           content: '\2191'; /* Unicode character code for the up arrow */
+           color: green;
+           margin-left: 5px;
+           font-size: 1.2em;
+           display: inline-block;
+           transform: rotate(45deg) scale(1, 0.8);
+           transform-origin: center;
+           font-weight: bold;
+        }
 
-/* CSS for the down arrow */
-.down-arrow::after {
-  content: '\2193'; /* Unicode character code for the down arrow */
-  color: red;
-  margin-left: 5px; /* Add some spacing between the arrow and the percentage */
-  font-size: 1.2em; /* Increase arrow size */
-  display: inline-block;
-  transform: rotate(45deg) scale(1, 0.8); /* Rotate and scale the arrow */
-  transform-origin: center;
-  font-weight: bold;
-}
+        .down-arrow::after {
+           content: '\2193'; /* Unicode character code for the down arrow */
+           color: red;
+           margin-left: 5px; /* Add some spacing between the arrow and the percentage */
+           font-size: 1.2em; /* Increase arrow size */
+           display: inline-block;
+           transform: rotate(45deg) scale(1, 0.8); /* Rotate and scale the arrow */
+           transform-origin: center;
+           font-weight: bold;
+         }
 
 
-/* Style for the "Remove" button */
-button {
-  background-color:  #7d9da1;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+     /* Style for the "Remove" button */
+     button {
+       background-color:  #7d9da1;
+       color: #fff;
+       border: none;
+       padding: 5px 10px;
+       border-radius: 3px;
+       cursor: pointer;
+       transition: background-color 0.3s ease;
+     }
 
-button:hover {
-  background-color: #627e80; /* Slightly darker red on hover */
-}
+     button:hover {
+       background-color: #627e80;
+     }
 
 
-/* Center the <ul> on the page for mobile */
+/* Media queries  for mobile */
 @media (max-width: 768px) {
+  .custom-toolbar> span{
+    font-size: 18px;
+  }
+  .input-container {
+     border-radius: 2px;
+  }
+
+     .input-container input.add {
+       flex: 0.5; /* Adjust the width of the input field for mobile */
+       font-size: 12px;
+     }
+
+    .input-container button.add-button {
+       flex: 1; /* Adjust the width of the button for mobile */
+       padding: 4px 12px;
+    }
+
   ul {
     align-items: center;
   }
 
+    li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 60%;
+    }
 
-  li {
-    display: flex;
-    flex-direction: column; /* Stack <li> elements vertically on small screens */
-    align-items: center; /* Center-align <li> elements */
-    width: 60%;
-  }/* Take full width on small screens */
+     .crypto-icon {
+       width: 40px;
+       height: 40px;
+     }
 
-  .crypto-icon {
-    width: 40px; /* Adjust the size of the icon for mobile */
-    height: 40px; /* Adjust the size of the icon for mobile */
-  }
+    .crypto-name,
+    .crypto-symbol {
+      margin: 2px 0;
+      font-size: 20px;
+    }
 
-  .crypto-name,
-  .crypto-symbol {
-    margin: 2px 0; /* Adjust the margin for mobile */
-    font-size: 20px; /* Adjust the font size for mobile */
-  }
-
-  .price {
-    font-size: 16px; /* Adjust the font size for mobile */
-  }
-
-
-
-  /* Adjust the width and height of the input field for mobile */
-  .mat-form-field {
-    width: 100%; /* Full width for mobile */
-    height: 36px; /* Adjust the height as desired */
-    margin-top: 10px;
-  }
-
-  .mat-form-field .add {
-    font-size: 12px; /* Adjust the font size for mobile */
-  }
-
-  /* Increase the button size for mobile */
-  .add-button {
-    font-size: 14px; /* Adjust the font size as desired */
-    padding: 8px 16px; /* Adjust the padding as desired */
-    margin-left: 10px; /* Add margin to separate the input and button */
-  }
+    .price {
+      font-size: 16px;
+    }
 
 }

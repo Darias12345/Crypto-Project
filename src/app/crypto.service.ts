@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CryptoService {
   private apiUrl = 'https://data.messari.io/api/v1';
-  private cryptoList: any[] = []; // To store the list of cryptocurrencies
+  private cryptoList: any[] = [];
 
   constructor(private http: HttpClient) {}
 
@@ -20,16 +20,6 @@ export class CryptoService {
   }
 
 
-  // Method to store the list of removed cryptocurrencies
-  storeRemovedCryptos(removedCryptos: string[]): void {
-    localStorage.setItem('removedCryptos', JSON.stringify(removedCryptos));
-  }
-
-// Method to retrieve the list of removed cryptocurrencies from local storage
-  getRemovedCryptos(): string[] {
-    const removedCryptosJson = localStorage.getItem('removedCryptos');
-    return removedCryptosJson ? JSON.parse(removedCryptosJson) : [];
-  }
 
 
   // Implement methods to add and remove cryptocurrencies
@@ -55,11 +45,15 @@ export class CryptoService {
       console.log('Cryptocurrency not found in the list.');
     }
   }
-  searchCryptos(query: string): Observable<any> {
-    const params = new HttpParams().set('q', query);
 
-    return this.http.get(`${this.apiUrl}/assets`, { params });
+  // Methods to store the list of removed cryptocurrencies to local storage and retrieve it from local storage
+  storeRemovedCryptos(removedCryptos: string[]): void {
+    localStorage.setItem('removedCryptos', JSON.stringify(removedCryptos));
   }
 
+  getRemovedCryptos(): string[] {
+    const removedCryptosJson = localStorage.getItem('removedCryptos');
+    return removedCryptosJson ? JSON.parse(removedCryptosJson) : [];
+  }
 
 }
